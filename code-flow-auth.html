@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Embedded Web Messaging - Code Flow Demo Page</title>
+    <script type="text/javascript">
+        window.lpTag = window.lpTag || {};
+        lpTag.site = "26206640"; // YOUR LE ACCOUNT NUMBER
+        lpTag.sdes = lpTag.sdes || [];
+        lpTag.sdes.push(
+            {
+                "type": "cart",  //MANDATORY
+                "total": 11.7,  //TOTAL VALUE OF THE CART AFTER DISCOUNT
+                "numItems": 6,  //NUMBER OF ITEMS IN CART
+                "products": [{
+                    "product": {
+                        "name": "prod1",  //PRODUCT NAME
+                        "category": "category",  //PRODUCT CATEGORY NAME
+                        "sku": "sku",  //PRODUCT SKU OR UNIQUE IDENTIFIER
+                        "price": 7.8  //SINGLE PRODUCT PRICE
+                    }, "quantity": 1  //NUMBER OF PRODUCTS
+                }]
+            }, {
+                "type": "purchase",  //MANDATORY
+                "total": 11.7,  //TOTAL VALUE OF THE TRANSACTION AFTER DISCOUNT
+                "orderId": "DRV1534XC",  //UNIQUE ORDER ID OR RECEIPT ID
+                "cart": {
+                    "products": [{
+                        "product": {
+                            "name": "antivirus pro plan",  //PRODUCT NAME
+                            "category": "software",  //PRODUCT CATEGORY NAME
+                            "sku": "xyz001",  //PRODUCT SKU OR UNIQUE IDENTIFIER
+                            "price": 7.8  //SINGLE PRODUCT PRICE
+                        },
+                        "quantity": 3  //QUANTITY OF THIS PRODUCT
+                    }]
+                }
+            }, {
+                "type": "prodView",  //MANDATORY
+                "products": [{  //ARRAY OF PRODUCTS
+                    "product": {
+                        "name": "red high heel shoe",  //PRODUCT NAME
+                        "category": "women shoes",  //PRODUCT CATEGORY NAME
+                        "sku": "xyz567",  //PRODUCT SKU OR UNIQUE IDENTIFIER
+                        "price": 77.8  //SINGLE PRODUCT PRICE
+                    }
+                }]
+            }, {
+                "type": "lead",  //MANDATORY
+                "lead": {
+                    "topic": "luxury car test drive 2015",  //TOPIC OR NAME OF A SUBMITTED LEAD
+                    "value": 22.22,  //EVALUATED VALUE OF THE LEAD
+                    "leadId": "xyz123"  //LEAD IDENTIFIER OR TICKET ID
+                }
+            }, {
+                "type": "service",  //MANDATORY
+                "service": {
+                    "topic": "order checkbook",  // SERVICE ACTIVITY TOPIC OR NAME
+                    "status": 0,  // STATUS ENUM
+                    // 0-Complete, 1-In Progress, 2-Approved, 3-cancelled, 4-Not Approved,
+                    // 5-Reviewed, 6-Missing Details, 7-Closed, 8-Removed, 9-Assigned,
+                    // 10-Waiting for Customer Response, 11-Waiting for Response, 12-Pending, 13-Resolved
+                    "category": "finance",  // SERVICE CATEGORY NAME
+                    "serviceId": "service12"  // SERVICE UNIQUE IDENTIFIER OR TICKET ID
+                }
+            }, {
+                "type": "error",  //MANDATORY
+                "error": {
+                    "message": "Expiration date missing",  // THE ERROR MESSAGE
+                    "code": "er100004"  // THE ERROR CODE
+                }
+            }, {
+                "type": "mrktInfo",  //MANDATORY
+                "info": {
+                    "channel": "1",  //ORIGINATING CHANNEL ENUM:
+                    // 0-Direct, 1-Search, 2-Social, 3-Email, 4-Referral, 5-Paid Search, 6-Display
+                    "affiliate": "Yahoo",  //AFFILIATE NAME
+                    "campaignId": "US coupon campaign"  //EXTERNAL ORIGINATING CAMPAIGN
+                }
+            }
+        );
+    </script>
+</head>
+
+<body>
+
+<!-- BEGIN LivePerson Monitor. -->
+<!-- Note this is a modified version of the tag that is provided on the website, with the site id parameterised -->
+<script type="text/javascript">window.lpTag=window.lpTag||{},'undefined'==typeof window.lpTag._tagCount?(window.lpTag={wl:lpTag.wl||null,scp:lpTag.scp||null,site:lpTag.site||'',section:lpTag.section||'',tagletSection:lpTag.tagletSection||null,autoStart:lpTag.autoStart!==!1,ovr:lpTag.ovr||{},_v:'1.10.0',_tagCount:1,protocol:'https:',events:{bind:function(t,e,i){lpTag.defer(function(){lpTag.events.bind(t,e,i)},0)},trigger:function(t,e,i){lpTag.defer(function(){lpTag.events.trigger(t,e,i)},1)}},defer:function(t,e){0===e?(this._defB=this._defB||[],this._defB.push(t)):1===e?(this._defT=this._defT||[],this._defT.push(t)):(this._defL=this._defL||[],this._defL.push(t))},load:function(t,e,i){var n=this;setTimeout(function(){n._load(t,e,i)},0)},_load:function(t,e,i){var n=t;t||(n=this.protocol+'//'+(this.ovr&&this.ovr.domain?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site);var o=document.createElement('script');o.setAttribute('charset',e?e:'UTF-8'),i&&o.setAttribute('id',i),o.setAttribute('src',n),document.getElementsByTagName('head').item(0).appendChild(o)},init:function(){this._timing=this._timing||{},this._timing.start=(new Date).getTime();var t=this;window.attachEvent?window.attachEvent('onload',function(){t._domReady('domReady')}):(window.addEventListener('DOMContentLoaded',function(){t._domReady('contReady')},!1),window.addEventListener('load',function(){t._domReady('domReady')},!1)),'undefined'===typeof window._lptStop&&this.load()},start:function(){this.autoStart=!0},_domReady:function(t){this.isDom||(this.isDom=!0,this.events.trigger('LPT','DOM_READY',{t:t})),this._timing[t]=(new Date).getTime()},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],hooks:lpTag.hooks||[],identities:lpTag.identities||[],ev:lpTag.ev||[]},lpTag.init()):window.lpTag._tagCount+=1;</script>
+<!-- END LivePerson Monitor. -->
+
+<script src='code-flow-auth.js'></script>
+
+<script>
+
+</script>
+
+<div class="jumbotron text-center">
+    <img class="w-25 p-3" src="https://support.liveperson.com/wp-content/uploads/2018/03/liveperson-logo-30cm_logo-orange.png" alt="LivePerson">
+    <h2>Embedded Web Messaging - Code Flow Demo Page</h2>
+    <p>Login to Auth0 to show the authenticated embedded messaging engagement</p>
+</div>
+
+<div class="container">
+    <a id="loginButton" class="btn btn-primary">Auth0 Login</a>
+    <a id="logoutButton" class="btn btn-danger">Auth0 Logout</a>
+</div>
+
+</body>
+
+</html>
