@@ -21,9 +21,7 @@ var idp = (function() {
     var logoutEndpoint = idp + '/v2/logout?returnTo={REDIRECTURI}';
 
     // Encoded uris for authentication, logging in and out
-    console.log(authenticationEndPoint.replace('{REDIRECTURI}', redirect_uri));
     var encoded = encodeURI(authenticationEndPoint.replace('{REDIRECTURI}', redirect_uri));
-    console.log("encoded: " + encoded);
     var loginEncoded = encodeURI(authenticationEndPoint.replace('{REDIRECTURI}', logRedirect_uri));
     var logoutEncoded = encodeURI(logoutEndpoint.replace('{REDIRECTURI}', logRedirect_uri));
 
@@ -95,6 +93,7 @@ var idp = (function() {
         console.log('9. iFrame dynamically inserted');
 
         // Navigate the iFrame to the authentication end point
+        console.log("iframe url: " + url);
         iframe.setAttribute('src', url);
         console.log('10. iFrame redirected to authentication endpoint');
     }
