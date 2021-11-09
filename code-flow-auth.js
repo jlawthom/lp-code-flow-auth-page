@@ -22,6 +22,7 @@ var idp = (function() {
 
     // Encoded uris for authentication, logging in and out
     var encoded = encodeURI(authenticationEndPoint.replace('{REDIRECTURI}', redirect_uri));
+    console.log(encoded);
     var loginEncoded = encodeURI(authenticationEndPoint.replace('{REDIRECTURI}', logRedirect_uri));
     var logoutEncoded = encodeURI(logoutEndpoint.replace('{REDIRECTURI}', logRedirect_uri));
 
