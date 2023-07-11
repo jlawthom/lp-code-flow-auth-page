@@ -5,7 +5,7 @@ var idp = (function() {
     // Client ID from Auth0
     var clientId = 'fW9ijlTpUUrYsg6L6PNjC5VQAnss9rdv';
     // ID of user you setup in Auth0
-    var user_id = 'auth0|617aaaceedcd510070f21add';
+    var user_id = 'auth0|64ad30366a1c99d41895941b';
     //*** </CHANGE THESE VARIABLES> ***//
 
     // Host has to be https
