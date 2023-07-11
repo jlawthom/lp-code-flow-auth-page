@@ -182,6 +182,13 @@ var idp = (function() {
 })();
 
 document.addEventListener("IdpReady", function() {
+    function identitiesCallback = (body) => {
+        console.log("--- Callback Body: " + JSON.stringify(body));
+    }
+    lpGetAuthenticationCode(identitiesCallback);
+});
+
+document.addEventListener("authCodeReady", function() {
 
     // Function that should be registered with LivePerson using lpTag.identities.push() when consumer is logged in
     // in order to identify the consumer
@@ -203,4 +210,5 @@ document.addEventListener("IdpReady", function() {
     else {
         lpTag.section = ['auth:unauthenticated'];
     }
+    
 });
