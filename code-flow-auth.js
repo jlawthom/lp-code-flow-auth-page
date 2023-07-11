@@ -182,7 +182,7 @@ var idp = (function() {
 })();
 
 document.addEventListener("IdpReady", function() {
-    function identitiesCallback = (body) => {
+    function identitiesCallback (body) {
         console.log("--- Callback Body: " + JSON.stringify(body));
     }
     lpGetAuthenticationCode(identitiesCallback);
