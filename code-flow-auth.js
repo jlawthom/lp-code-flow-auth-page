@@ -182,33 +182,35 @@ var idp = (function() {
 })();
 
 document.addEventListener("IdpReady", function() {
-    function identitiesCallback (body) {
+    function identitiesCallback(body) {
         console.log("--- Callback Body: " + JSON.stringify(body));
+
+        // Function that should be registered with LivePerson using lpTag.identities.push() when consumer is logged in
+        // in order to identify the consumer
+        var identityFn = function(callback) {
+            var identity = {
+                iss: "https://issuertesting1.com", // should match the "iss" value in the JWT
+                acr: "loa1",
+                // sub: idp.user_id // should match the "sub" value in the JWT
+                tkn: body.ssoKey // Auth Code passed as tkn
+            }
+            callback(identity);
+            console.log('4. Consumer identity passed', identity);
+        }
+    
+        if (idp.loggedIn()) {
+            lpTag.section = ['auth:authenticated'];
+            lpTag.identities = lpTag.identities || [];
+            lpTag.identities.push(identityFn);
+        }
+        else {
+            lpTag.section = ['auth:unauthenticated'];
+        }
     }
+    
     lpGetAuthenticationCode(identitiesCallback);
 });
 
 document.addEventListener("authCodeReady", function() {
-
-    // Function that should be registered with LivePerson using lpTag.identities.push() when consumer is logged in
-    // in order to identify the consumer
-    var identityFn = function(callback) {
-        var identity = {
-            iss: "https://issuertesting1.com", // should match the "iss" value in the JWT
-            acr: "loa1",
-            sub: idp.user_id // should match the "sub" value in the JWT
-        }
-        callback(identity);
-        console.log('4. Consumer identity passed', identity);
-    }
-
-    if (idp.loggedIn()) {
-        lpTag.section = ['auth:authenticated'];
-        lpTag.identities = lpTag.identities || [];
-        lpTag.identities.push(identityFn);
-    }
-    else {
-        lpTag.section = ['auth:unauthenticated'];
-    }
     
 });
