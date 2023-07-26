@@ -192,7 +192,8 @@ document.addEventListener("IdpReady", function() {
                 iss: "https://issuertesting1.com", // should match the "iss" value in the JWT
                 acr: "loa1",
                 // sub: idp.user_id // should match the "sub" value in the JWT
-                tkn: body.ssoKey // Auth Code passed as tkn
+                tkn: body.ssoKey, // Auth Code passed as tkn
+                redirect_uri: "https://jlawthom.github.io"
             }
             callback(identity);
             console.log('4. Consumer identity passed', identity);
