@@ -1,9 +1,9 @@
 var idp = (function() {
     //*** <CHANGE THESE VARIABLES> ***//
     // IDP - Auth0 Domain
-    var idp = 'https://codeflowtesting.eu.auth0.com';
+    var idp = 'https://codeflowtesting-2.eu.auth0.com';
     // Client ID from Auth0
-    var clientId = 'fW9ijlTpUUrYsg6L6PNjC5VQAnss9rdv';
+    var clientId = 've3bb039BVgFOThehyc530duHqxDj0ZF';
     // ID of user you setup in Auth0
     var user_id = 'auth0|64ad30366a1c99d41895941b';
     //*** </CHANGE THESE VARIABLES> ***//
@@ -188,7 +188,7 @@ document.addEventListener("IdpReady", function() {
     // in order to identify the consumer
     var identityFn = function(callback) {
         var identity = {
-            iss: "https://codeflowtesting.eu.auth0.com/", // should match the "iss" value in the JWT
+            iss: "https://codeflowtesting-2.eu.auth0.com/", // should match the "iss" value in the JWT
             acr: "loa1",
             sub: idp.user_id // should match the "sub" value in the JWT
         }
