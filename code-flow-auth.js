@@ -5,7 +5,7 @@ var idp = (function() {
     // Client ID from Auth0
     var clientId = 've3bb039BVgFOThehyc530duHqxDj0ZF';
     // ID of user you setup in Auth0
-    var user_id = 'auth0|617aaaceedcd510070f21add';
+    var user_id = 'auth0|65774dd5a6207aac35a63808';
     //*** </CHANGE THESE VARIABLES> ***//
 
     // Host has to be https
@@ -142,7 +142,7 @@ var idp = (function() {
 
     // On pageload
     document.addEventListener('DOMContentLoaded', function(){
-        console.log('case01409966-testing');
+        console.log('case01409966-testing-2');
         console.log('1. Main Frame loaded');
 
         // Get login and logout button ids
