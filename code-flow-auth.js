@@ -3,7 +3,7 @@ var idp = (function() {
     // IDP - Auth0 Domain
     var idp = 'https://codeflowtesting-2.eu.auth0.com';
     // Client ID from Auth0
-    var clientId = 'fW9ijlTpUUrYsg6L6PNjC5VQAnss9rdv';
+    var clientId = 've3bb039BVgFOThehyc530duHqxDj0ZF';
     // ID of user you setup in Auth0
     var user_id = 'auth0|617aaaceedcd510070f21add';
     //*** </CHANGE THESE VARIABLES> ***//
@@ -142,7 +142,7 @@ var idp = (function() {
 
     // On pageload
     document.addEventListener('DOMContentLoaded', function(){
-        console.log('case01409966-testing');
+        console.log('case01409966-testing-2');
         console.log('1. Main Frame loaded');
 
         // Get login and logout button ids
