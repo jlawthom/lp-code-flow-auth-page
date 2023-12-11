@@ -122,9 +122,8 @@ var idp = (function() {
 
     // Function that will be called by LiveEngage when the engagement is clicked
     window.lpGetAuthenticationCode = function(callback) {
+        console.log('7. Trigger function run');
         if (isLoggedIn()) {
-            console.log('7. Trigger function run');
-
             listenerFunc = function(e) { eventHandler(e, callback) };
 
             // Listen for the authentication token from the iFrame
