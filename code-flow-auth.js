@@ -141,7 +141,7 @@ var idp = (function() {
 
     // On pageload
     document.addEventListener('DOMContentLoaded', function(){
-        console.log('case01409966-testing-2');
+        console.log('case01409966-testing');
         console.log('1. Main Frame loaded');
 
         // Get login and logout button ids
