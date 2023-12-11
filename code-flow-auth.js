@@ -3,9 +3,9 @@ var idp = (function() {
     // IDP - Auth0 Domain
     var idp = 'https://codeflowtesting.eu.auth0.com';
     // Client ID from Auth0
-    var clientId = 've3bb039BVgFOThehyc530duHqxDj0ZF';
+    var clientId = 'fW9ijlTpUUrYsg6L6PNjC5VQAnss9rdv';
     // ID of user you setup in Auth0
-    var user_id = 'auth0|64ad30366a1c99d41895941b';
+    var user_id = 'auth0|617aaaceedcd510070f21add';
     //*** </CHANGE THESE VARIABLES> ***//
 
     // Host has to be https
