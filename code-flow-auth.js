@@ -187,7 +187,7 @@ document.addEventListener("IdpReady", function() {
     // in order to identify the consumer
     var identityFn = function(callback) {
         var identity = {
-            iss: "https://api0.ref.o2.co.uk", // should match the "iss" value in the JWT
+            iss: "issuertesting1.com", // should match the "iss" value in the JWT
             acr: "loa1",
             sub: idp.user_id // should match the "sub" value in the JWT
         }
