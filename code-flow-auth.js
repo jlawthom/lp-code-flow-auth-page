@@ -121,6 +121,7 @@ var idp = (function() {
     }
 
     // Function that will be called by LiveEngage when the engagement is clicked
+    window.lpMethods = {};
     window.lpMethods.lpGetAuthenticationToken = function(callback) {
         console.log('7. Trigger function run');
         if (isLoggedIn()) {
